@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend+Deca:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
+
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-Very-dark-blue;
+  }
+  .cardImg {
+    @apply bg-no-repeat bg-cover bg-center;
+    background-image: url("../src/assets/images/image-header-mobile.jpg");
+  }
+  @media (min-width: 768px) {
+    .cardImg {
+      background-image: url("../src/assets/images/image-header-desktop.jpg");
+    }
+  }
+}
+
+/* @layer components {
+  .cardImg {
+    @apply bg-no-repeat bg-cover bg-center;
+    background-image: url("../src/assets/images/image-header-mobile.jpg");
+  }
+  @media (min-width: 768px) {
+    .cardImg {
+      background-image: url("../src/assets/images/image-header-desktop.jpg");
+    }
+  }
+} */
+
+@theme {
+  --font-one: Inter;
+  --font-two: Lexend Deca;
+
+  /* Primary */
+
+  --color-Very-dark-blue: hsl(233, 47%, 7%); /* (main background) */
+  --color-Dark-desaturated-blue: hsl(244, 38%, 16%); /* (card background) */
+  --color-Soft-violet: hsl(277, 64%, 61%); /* (accent) */
+
+  /* Neutral */
+}
