@@ -1,6 +1,11 @@
 import { StatText } from "./StatText";
 
-export function CardText() {
+export function CardText({
+  currentStatIndex,
+  statData,
+  onChangeClick,
+  onChangeClickPrev,
+}) {
   return (
     <>
       <div className="md:w-1/2 bg-Dark-desaturated-blue p-8 md:p-12 rounded-b-xl md:rounded-br-none md:rounded-l-2xl">
@@ -13,9 +18,29 @@ export function CardText() {
           regarding revenue, customer experience, and overall efficiency.
         </p>
         <div className="flex flex-col md:flex-row gap-4 md:mt-8">
-          <StatText stat={"10k+"}>COMPANIES</StatText>
-          <StatText stat={314}>COMPANIES</StatText>
-          <StatText stat={"12m+"}>QUERIES</StatText>
+          {/* previous button start */}
+          <button
+            onClick={onChangeClickPrev}
+            type="button"
+            className="font-two bg-Very-dark-blue text-2xl px-4 rounded-full text-Soft-violet"
+          >
+            Previous
+          </button>
+          {/* previous button end */}
+
+          {/* current stat in cycle */}
+          <StatText stat={statData[currentStatIndex].numbers}>
+            {statData[currentStatIndex].statName}
+          </StatText>
+
+          {/* Next button */}
+          <button
+            onClick={onChangeClick}
+            type="button"
+            className="font-two bg-Very-dark-blue text-2xl px-4 rounded-full text-Soft-violet"
+          >
+            Next
+          </button>
         </div>
       </div>
     </>
